@@ -24,7 +24,7 @@ class WorkoutsController < ApplicationController
     end
 
     def show
-        render json: @workout
+        render json: @workout.transform_workout
     end
 
     def update
