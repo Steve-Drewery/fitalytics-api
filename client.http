@@ -1,0 +1,3 @@
+## Get workouts
+GET http://localhost:3000/api/workouts
+

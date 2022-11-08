@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  weight: 
+  reps: 
+  distance: 
+  time: 2022-11-08 14:42:08
+  avg_bpm: 
+  date: 2022-11-08 14:42:08
+  category: one
+
+two:
+  name: MyString
+  description: MyString
+  weight: 
+  reps: 
+  distance: 
+  time: 2022-11-08 14:42:08
+  avg_bpm: 
+  date: 2022-11-08 14:42:08
+  category: two
