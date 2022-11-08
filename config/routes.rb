@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     post '/workouts', to: 'workouts#create'
     get '/workouts/:id', to: 'workouts#show'
     put '/workouts/:id', to: 'workouts#update'
-    delete '/workouts/:id', to: 'workouts#delete'
+    delete '/workouts/:id', to: 'workouts#destroy'
   end
 end

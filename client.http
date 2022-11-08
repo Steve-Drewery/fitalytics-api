@@ -1,3 +1,40 @@
 ## Get workouts
 GET http://localhost:3000/api/workouts
 
+### Successfully create a workout
+POST http://localhost:3000/api/workouts
+Content-Type: application/json
+
+{
+    "category_id": "4",
+    "description": "Running again"
+}
+
+### Fail to create a workout
+POST http://localhost:3000/api/workouts
+Content-Type: application/json
+
+{
+    "description": "Running again"
+}
+
+### Successfully show workout
+GET http://localhost:3000/api/workouts/1
+
+### Fail to show workout
+GET http://localhost:3000/api/workouts/999
+
+### Successfully update a workout
+PUT http://localhost:3000/api/workouts/1
+Content-Type: application/json
+
+{
+    "category_id": 4,
+    "description": "updated Running again"
+}
+
+### Successfully delete workout
+DELETE http://localhost:3000/api/workouts/2
+
+### Workout based on category
+GET http://localhost:3000/api/workouts/?category=swimming
