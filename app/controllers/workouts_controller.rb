@@ -1,20 +1,21 @@
 class WorkoutsController < ApplicationController
+    before_action :authorize_request
     before_action :set_workout, only: [:show, :update, :destroy]
     def index
         if params[:category]
             puts "Searching for #{params[:category]}"
-            @workouts = Workout.find_by_catagory(params[:category])
+            @workouts = @current_user.workouts.find_by_catagory(params[:category])
             if @workouts.count == 0
                 return render json: {error: "No workout of that category"}, status: 404
             end
         else
-            @workouts = Workout.all
+            @workouts = @current_user.workouts.all
         end
         render json: @workouts
     end
 
     def create
-        @workout = Workout.create(workout_params)
+        @workout = @current_user.workouts.create(workout_params)
         if @workout.errors.any?
             render json: @workout.errors, status: :unprocessable_entity
         else
