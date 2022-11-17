@@ -1,0 +1,2 @@
+class LadderController < ApplicationController
+end
