@@ -31,14 +31,14 @@ ActiveRecord::Schema.define(version: 2022_11_08_091756) do
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string "name"
     t.string "description"
     t.string "weight"
     t.string "reps"
     t.string "distance"
     t.string "time"
     t.string "avg_bpm"
-    t.datetime "date"
+    t.date "date", default: "2022-11-17", null: false
+    t.date "starts_at", default: "2022-11-17", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

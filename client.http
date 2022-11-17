@@ -1,4 +1,4 @@
-@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2Njg1NjczNzV9.tIE1gPTkzVO9lzvL-T8PbkBUv9V00J0Yl2RHk11_rbQ"
+@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2Njg3NzM1NzF9.pae4PfgGgVz1F62s9zhVWHBdXi4swaJB_cpV5Q5eQV8"
 
 ## Get workouts
 GET http://localhost:3000/api/workouts
@@ -14,7 +14,8 @@ Content-Type: application/json
     "description": "Running again",
     "distance": "3km",
     "time": "15:30",
-    "avg_bpm": "140"
+    "avg_bpm": "140",
+    "date": "22-1-1"
 }
 
 ### Fail to create a workout
@@ -31,10 +32,12 @@ Authorization: "{{token}}"
 
 ### Fail to show workout
 GET http://localhost:3000/api/workouts/999
+Authorization: "{{token}}"
 
 ### Successfully update a workout
 PUT http://localhost:3000/api/workouts/1
 Content-Type: application/json
+Authorization: "{{token}}"
 
 {
     "category_id": 4,
@@ -43,9 +46,11 @@ Content-Type: application/json
 
 ### Successfully delete workout
 DELETE http://localhost:3000/api/workouts/2
+Authorization: "{{token}}"
 
 ### Workout based on category
 GET http://localhost:3000/api/workouts/?category=swimming
+Authorization: "{{token}}"
 
 ### Create a user
 POST http://localhost:3000/api/users
@@ -64,7 +69,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "steve32@test.com",
+    "email": "steve323@test.com",
     "password": "password"
 }
 
@@ -77,7 +82,7 @@ Content-Type: application/json
 }
 
 ### Get a user
-GET http://localhost:3000/api/users/Steve3
+GET http://localhost:3000/api/users/Steve323
 Authorization: "{{token}}"
 
 ### Get all users
