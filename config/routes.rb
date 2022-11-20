@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get '/workouts/:id', to: 'workouts#show'
     put '/workouts/:id', to: 'workouts#update'
     delete '/workouts/:id', to: 'workouts#destroy'
+    get 'ladder' => 'ladder#index'
     scope '/auth' do
       post '/login', to: 'authentication#login'
     end
