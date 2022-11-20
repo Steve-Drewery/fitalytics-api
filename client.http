@@ -1,4 +1,4 @@
-@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2Njg3NzM1NzF9.pae4PfgGgVz1F62s9zhVWHBdXi4swaJB_cpV5Q5eQV8"
+@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjkwMzg0NTR9.eKN1RCsetGB0poR6ZXTi4Djiv4GIoRNjlwsOqiAkbBQ"
 
 ## Get workouts
 GET http://localhost:3000/api/workouts
@@ -15,7 +15,6 @@ Content-Type: application/json
     "distance": "3km",
     "time": "15:30",
     "avg_bpm": "140",
-    "date": "22-1-1",
     "weight": "100kg"
 }
 
@@ -90,3 +89,6 @@ Authorization: "{{token}}"
 GET http://localhost:3000/api/users
 Authorization: "{{token}}"
 
+### Get Ladder
+GET http://localhost:3000/api/ladder
+Authorization: "{{token}}"

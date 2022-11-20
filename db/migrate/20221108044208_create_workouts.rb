@@ -7,7 +7,7 @@ class CreateWorkouts < ActiveRecord::Migration[6.1]
       t.string :distance
       t.string :time
       t.string :avg_bpm
-      t.date :date, :starts_at, :null => false, :default => Time.now
+      t.date :date, :default => Time.now
       t.references :category, null: false, foreign_key: true
 
       t.timestamps
