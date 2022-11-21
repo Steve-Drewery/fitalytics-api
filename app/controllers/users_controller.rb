@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
     private
 
+    # Locate user by username; error if username does not exist
     def find_user
         @user = User.find_by_username!(params[:username])
         rescue ActiveRecord::RecordNotFound

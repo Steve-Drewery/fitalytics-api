@@ -15,6 +15,7 @@ class AuthenticationController < ApplicationController
 
     private 
 
+    # Require email and password for login, error if not completed
     def login_params
         params.permit(:email, :password)
     end
