@@ -50,7 +50,7 @@ class WorkoutsController < ApplicationController
 
     def set_workout
         begin
-            @workout = Workout.find(params[:user_id])
+            @workout = @current_user.workouts.find(params[:id])
         rescue
             render json: {error: "Workout not found"}, status: 404
         end

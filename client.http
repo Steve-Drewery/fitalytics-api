@@ -1,4 +1,4 @@
-@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjkxMTA1NTd9.Zd6CTa_0YTlSuU1t2NvOFDkqciwN_pE4pXCLOnXA_HE"
+@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NjkxMjUyNjZ9.RuvohP1rQuWosbwS1Z4q0q38yGVmEb6yMpw5N35BN8k"
 
 ## Get workouts
 GET http://localhost:3000/api/workouts
@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ### Successfully show workout
-GET http://localhost:3000/api/workouts/1
+GET http://localhost:3000/api/workouts/12
 Authorization: "{{token}}"
 
 ### Fail to show workout
@@ -56,9 +56,9 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "name": "Steve3",
-    "username": "Steve3",
-    "email": "steve3@test.com",
+    "name": "Steve33",
+    "username": "Steve33",
+    "email": "steve33@test.com",
     "password": "password",
     "password_confirmation": "password"
 }
@@ -68,7 +68,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "steve3@test.com",
+    "email": "steve33@test.com",
     "password": "password"
 }
 
