@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       post '/login', to: 'authentication#login'
     end
     get '/ladder', to: 'ladder#index'
+    get '/ladder/weight', to: 'ladder#weight'
+    get '/ladder/swimming', to: 'ladder#swimming'
+    get '/ladder/running', to: 'ladder#running'
   end
   
 end

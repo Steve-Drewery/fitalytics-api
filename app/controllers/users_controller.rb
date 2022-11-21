@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     # GET /users/{username}
     def show
+        @current_user.update(workouts_this_week: Workout.where(date: 1.week.ago..).count)
         render json: @user, status: :ok
     end
 
