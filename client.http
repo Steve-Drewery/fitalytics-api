@@ -11,12 +11,10 @@ Content-Type: application/json
 
 {
     "category_id": 1,
-    "description": "Running again",
-    "distance": "3km",
-    "time": "15:30",
-    "avg_bpm": "140",
-    "weight": "100kg",
-    "date": "2022-11-20"
+    "description": "Bench",
+    "time": "60",
+    "avg_bpm": "120",
+    "date": "2022-11-16"
 }
 
 ### Fail to create a workout
