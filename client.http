@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ### Successfully show workout
-GET http://localhost:3000/api/workouts/12
+GET http://localhost:3000/api/workouts/17
 Authorization: "{{token}}"
 
 ### Fail to show workout
@@ -34,7 +34,7 @@ GET http://localhost:3000/api/workouts/999
 Authorization: "{{token}}"
 
 ### Successfully update a workout
-PUT http://localhost:3000/api/workouts/1
+PUT http://localhost:3000/api/workouts/17
 Content-Type: application/json
 Authorization: "{{token}}"
 
@@ -44,7 +44,7 @@ Authorization: "{{token}}"
 }
 
 ### Successfully delete workout
-DELETE http://localhost:3000/api/workouts/2
+DELETE http://localhost:3000/api/workouts/17
 Authorization: "{{token}}"
 
 ### Workout based on category
