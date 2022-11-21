@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_11_08_091756) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.integer "total_workouts", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 2022_11_08_091756) do
     t.string "distance"
     t.string "time"
     t.string "avg_bpm"
-    t.date "date", default: "2022-11-20"
+    t.date "date", default: "2022-11-21"
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

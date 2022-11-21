@@ -1,4 +1,4 @@
-@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjkwMzg0NTR9.eKN1RCsetGB0poR6ZXTi4Djiv4GIoRNjlwsOqiAkbBQ"
+@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NjkxMDc2NzV9.1HlivmxvZRK1qiPrFLXDvKdN-WxfYu2Wmjs2BkRihsg"
 
 ## Get workouts
 GET http://localhost:3000/api/workouts
@@ -57,9 +57,9 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "name": "Steve323",
-    "username": "Steve323",
-    "email": "steve323@test.com",
+    "name": "Steve3",
+    "username": "Steve3",
+    "email": "steve3@test.com",
     "password": "password",
     "password_confirmation": "password"
 }
@@ -69,7 +69,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "steve323@test.com",
+    "email": "steve3@test.com",
     "password": "password"
 }
 
@@ -89,6 +89,5 @@ Authorization: "{{token}}"
 GET http://localhost:3000/api/users
 Authorization: "{{token}}"
 
-### Get Ladder
+### Get ladder
 GET http://localhost:3000/api/ladder
-Authorization: "{{token}}"

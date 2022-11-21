@@ -19,6 +19,7 @@ class WorkoutsController < ApplicationController
         if @workout.errors.any?
             render json: @workout.errors, status: :unprocessable_entity
         else
+            @current_user.update(total_workouts: @current_user.workouts.count)
             render json: @workout, status: 201
         end
     end
@@ -49,7 +50,7 @@ class WorkoutsController < ApplicationController
 
     def set_workout
         begin
-            @workout = Workout.find(params[:id])
+            @workout = Workout.find(params[:user_id])
         rescue
             render json: {error: "Workout not found"}, status: 404
         end
