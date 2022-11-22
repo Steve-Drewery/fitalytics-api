@@ -94,7 +94,7 @@ Content-Type: application/json
 Authorization: "{{token}}"
 
 {
-    "weekly_goal": 2
+    "weekly_goal": 0
 }
 
 ### Delete a user
