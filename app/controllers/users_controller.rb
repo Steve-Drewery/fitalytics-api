@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :authorize_request, except: :create
     before_action :find_user, except: %i[create index]
+    before_action :set_weekly_workouts, only: [:index, :show]
 
     # GET /users
     def index
@@ -10,7 +11,6 @@ class UsersController < ApplicationController
 
     # GET /users/{username}
     def show
-        @current_user.update(workouts_this_week: Workout.where(date: 1.week.ago..).count)
         render json: @user, status: :ok
     end
 
@@ -48,6 +48,10 @@ class UsersController < ApplicationController
         @user = User.find_by_username!(params[:username])
         rescue ActiveRecord::RecordNotFound
             render json: { errors: 'User not found' }, status: :not_found
+    end
+
+    def set_weekly_workouts
+        @current_user.update!(workouts_this_week: @current_user.workouts.where(date: Date.today.beginning_of_week..).count)
     end
 
     def user_params
