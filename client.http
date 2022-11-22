@@ -1,4 +1,4 @@
-@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjkxOTM1MDZ9.70IlVPzhDolHOJAHtxdfz-bGY9UYjJwa9q6QvYPpkaU"
+@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjkxOTg2MTJ9.SMmFzy5epToSDTfeM784BpgMgLZVsUa9U-SB_2dnmMc"
 
 ## Get workouts
 GET http://localhost:3000/api/workouts
@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ### Successfully show workout
-GET http://localhost:3000/api/workouts/17
+GET http://localhost:3000/api/workouts/2
 Authorization: "{{token}}"
 
 ### Fail to show workout
@@ -56,9 +56,9 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "name": "Steve333",
-    "username": "Steve333",
-    "email": "steve333@test.com",
+    "name": "Steve33333",
+    "username": "Steve33333",
+    "email": "steve33333@test.com",
     "password": "password",
     "password_confirmation": "password"
 }
@@ -68,7 +68,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "steve33@test.com",
+    "email": "steve333@test.com",
     "password": "password"
 }
 
@@ -81,7 +81,7 @@ Content-Type: application/json
 }
 
 ### Get a user
-GET http://localhost:3000/api/users/Steve333
+GET http://localhost:3000/api/users/Steve33
 Authorization: "{{token}}"
 
 ### Get all users
@@ -89,12 +89,12 @@ GET http://localhost:3000/api/users
 Authorization: "{{token}}"
 
 ### Update a user
-PUT http://localhost:3000/api/users/Steve333
+PUT http://localhost:3000/api/users/Steve
 Content-Type: application/json
 Authorization: "{{token}}"
 
 {
-    "weekly_goal": 0
+    "weekly_goal": 2
 }
 
 ### Delete a user

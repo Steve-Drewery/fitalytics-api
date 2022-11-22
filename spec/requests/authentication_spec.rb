@@ -1,37 +1,41 @@
 require 'rails_helper'
 
 describe 'Authentication', type: :request do
-    describe 'POST /login' do
-        let(:user) { FactoryBot.create(:user, username: 'Steve', email: 'steve@test.com', password: 'password')}
+    describe 'POST /authenticate' do
         it 'authenticates the client' do
-            post '/api/users', params: { name: "Steve323",
-                username: "Steve323",
-                email: "steve323@test.com",
-                password: "password",
-                password_confirmation: "password"}
+            post '/api/users', params: { name: 'steve', email: 'steve@test.com', username: 'steve', password: 'password', password_confirmation: 'password'}
 
             expect(response).to have_http_status(:created)
-            expect(JSON.parse(response.body)).to include("token" && "username")
+            expect(JSON.parse(response.body)).to include(
+                "username" && "token"
+            )
         end
 
         it 'returns error when username is missing' do
-            post '/api/users', params: { password: 'password'}
+            post '/api/users', params: { name: 'steve', email: 'steve@test.com', password: 'password', password_confirmation: 'password'}
 
             expect(response).to have_http_status(:unprocessable_entity)
-            expect(JSON.parse(response.body)).to eq("errors" => ["Email can't be blank", "Username can't be blank"])
+            expect(JSON.parse(response.body)).to include(
+                "errors" => ["Username can't be blank"]
+            )
         end
 
-        it 'returns arror when password is missing' do
-            post '/api/users', params: { username: 'Steve'}
+        it 'returns error when email is missing' do
+            post '/api/users', params: { name: 'steve', username: 'steve', password: 'password', password_confirmation: 'password'}
 
             expect(response).to have_http_status(:unprocessable_entity)
-            expect(JSON.parse(response.body)).to eq("errors" => ["Password can't be blank", "Email can't be blank"])
+            expect(JSON.parse(response.body)).to include(
+                "errors" => ["Email can't be blank"]
+            )
         end
 
-        it 'returns error when password is incorrect' do
-            post '/api/auth/login', params: { email: user.email, password: 'incorrect'}
+        it 'returns error when password is missing' do
+            post '/api/users', params: { name: 'steve', username: 'steve', email: 'steve@test.com'}
 
-            expect(response).to have_http_status(:unauthorized)
+            expect(response).to have_http_status(:unprocessable_entity)
+            expect(JSON.parse(response.body)).to include(
+                "errors" => ["Password can't be blank"]
+            )
         end
     end
 end

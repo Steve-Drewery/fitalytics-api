@@ -1,12 +1,17 @@
 require 'rails_helper'
 
-describe 'Fitalytics API', type: :request do
-    let(:user) {FactoryBot.create(:user, name: 'Steve', username: 'Steve', email: 'steve@test.com', password: 'password')}
-    it 'returns user token' do
+describe 'Users', type: :request do
+    describe 'POST /authenticate/login' do
+        let(:user) { FactoryBot.create(:user, username: 'steve', email: 'steve', password: 'password', password_confirmation: 'password')}
         
 
-        post '/api/auth/login', params: { email: user.email, password: user.password }
+        it 'authenticates the login' do
+            post '/api/auth/login', params: { email: user.username, password: 'password'}
 
-        expect(response).to have_http_status(:ok)
+            expect(response).to have_http_status(:ok)
+            expect(JSON.parse(response.body)).to include(
+                "token" && "username"
+            )
+        end
     end
 end
