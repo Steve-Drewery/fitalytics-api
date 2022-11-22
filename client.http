@@ -1,4 +1,4 @@
-@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NjkxNzU3MTV9.kdcwWfVXvKd4dG9HqTRQoAn_orZP29EbzJiLtub3d0k"
+@token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjkxOTM1MDZ9.70IlVPzhDolHOJAHtxdfz-bGY9UYjJwa9q6QvYPpkaU"
 
 ## Get workouts
 GET http://localhost:3000/api/workouts
@@ -89,12 +89,12 @@ GET http://localhost:3000/api/users
 Authorization: "{{token}}"
 
 ### Update a user
-PUT http://localhost:3000/api/users/Steve3
+PUT http://localhost:3000/api/users/Steve333
 Content-Type: application/json
 Authorization: "{{token}}"
 
 {
-    "email": "Steve333@test.com"
+    "weekly_goal": 1
 }
 
 ### Delete a user
