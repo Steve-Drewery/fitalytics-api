@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-    before_action :authorize_request, except: :create
-    before_action :set_weekly_workouts, only: [:index, :show]
-    before_action :find_user, except: %i[create index]
+    before_action :authorize_request, except: :create # authorize request only on create
+    before_action :set_weekly_workouts, only: [:index, :show] # counts workouts this week on index and show
+    before_action :find_user, except: %i[create index] 
 
     
     # GET /users

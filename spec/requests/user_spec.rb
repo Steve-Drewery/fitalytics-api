@@ -4,7 +4,7 @@ describe 'Users', type: :request do
     describe 'POST /authenticate/login' do
         let(:user) { FactoryBot.create(:user, username: 'steve', email: 'steve', password: 'password', password_confirmation: 'password')}
         
-
+        # Recieves a token and username to authenticate user login
         it 'authenticates the login' do
             post '/api/auth/login', params: { email: user.username, password: 'password'}
 

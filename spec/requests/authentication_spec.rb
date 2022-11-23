@@ -10,6 +10,8 @@ describe 'Authentication', type: :request do
                 "username" && "token"
             )
         end
+        
+        # Returns error if username missing
 
         it 'returns error when username is missing' do
             post '/api/users', params: { name: 'steve', email: 'steve@test.com', password: 'password', password_confirmation: 'password'}
@@ -20,6 +22,8 @@ describe 'Authentication', type: :request do
             )
         end
 
+        # Returns error if email missing
+
         it 'returns error when email is missing' do
             post '/api/users', params: { name: 'steve', username: 'steve', password: 'password', password_confirmation: 'password'}
 
@@ -28,6 +32,8 @@ describe 'Authentication', type: :request do
                 "errors" => ["Email can't be blank"]
             )
         end
+
+        # Returns error if password missing
 
         it 'returns error when password is missing' do
             post '/api/users', params: { name: 'steve', username: 'steve', email: 'steve@test.com'}
