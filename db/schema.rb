@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2022_11_22_083837) do
     t.string "distance"
     t.string "time"
     t.string "avg_bpm"
-    t.date "date", default: "2022-11-22"
+    t.date "date", default: "2022-11-23"
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
